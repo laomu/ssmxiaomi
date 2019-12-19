@@ -1,0 +1,35 @@
+*{margin: 0; padding: 0;}
+header{width: 1140px; height: 98px;margin: 0 auto;}
+#loginbox{width: 100%;height: 588px; background-image: url("../images/loginbg.jpg");background-position: center center;}
+#mainbox{width: 410px; background-color:white;float:right; margin-top:40px;margin-right:110px;}
+#mainbox #maintitle{width: 410px;height: 82px;}
+#maintitle div{float: left; font-size: 22px; font-weight: 500;line-height: 82px;text-align: center;width:200px;}
+#maintitle span{float:left;display: block; height: 20px; width:2px; border: solid 1px #d1d1d1;margin-top:30px;}
+#error-username{display: inline-block;margin-left:40px;font-size:12px; color:#888888;}
+#error-password{display: inline-block;margin-left:40px;font-size:12px; color:#888888;}
+#maintitle #account{color: orangered; }
+#maininput input{display: block; width: 340px;color:#666; margin-left:30px; border:solid 1px #ddd; height: 50px;margin-top: 20px;padding-left:10px;}
+#maininput input[type="submit"]{margin-top: 30px;background-color: orangered; color: white; font-size:16px;}
+#mainother{margin:10px 0;width: 350px; margin-left: 30px;}
+#mainother div:nth-of-type(1){color:orangered;float:left;}
+#mainother div:nth-of-type(2){color:#b8b8b8;float:right;}
+#otherlogin{width:350px; margin-left:30px;margin-top:150px;background-color:white;}
+#otherlogin #oth_title{width: 100%; height:20px; border-top: solid 1px #bbb;}
+#otherlogin #oth_desc{color:#bbb; width: 100px;height:20px;margin:0 auto;margin-top:-30px;background-color: white;text-align:center;}
+#oth_logo{background-color:white;}
+#oth_logo em{display: block;width:18px; height:18px;margin-top:6px;margin-left:6px;}
+#oth_logo a{display:block;width:30px; height: 30px;border-radius:50%; margin-top: 20px; margin-bottom: 40px;float:left;margin-left:30px;}
+#oth_logo a:nth-of-type(1){background-color:#0288D1; margin-left:72px;}
+#oth_logo a:nth-of-type(1) em{background-image: url("../images/friendlink.png"); background-position: -20px -1px;background-repeat: no-repeat;}
+#oth_logo a:nth-of-type(2){background-color:#D32F2F}
+#oth_logo a:nth-of-type(2) em{background-image: url("../images/friendlink.png"); background-position: -38px -1px;background-repeat: no-repeat;}
+#oth_logo a:nth-of-type(3){background-color:#00AAEE}
+#oth_logo a:nth-of-type(3) em{width:35px;margin-left:4px;background-image: url("../images/friendlink.png"); background-position: -56px -1px;background-repeat: no-repeat;}
+#oth_logo a:nth-of-type(4){background-color:#00D20D}
+#oth_logo a:nth-of-type(4) em{width:30px;margin-left:3px;margin-top:7px;background-image: url("../images/friendlink.png"); background-position: -83px -1px;background-repeat: no-repeat;}
+
+
+footer{width: 100%; height: 180px; text-align: center;padding-top:100px;}
+footer a {color: #333;text-decoration: none;margin-left: 10px;margin-right: 20px;}
+footer a:hover{color:black;}
+footer p{margin-top: 20px;}

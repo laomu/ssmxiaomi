@@ -1,0 +1,17 @@
+*{margin: 0; padding: 0; }
+body{background-color:#F9F9F9;!important;}
+#container{width: 854px; background-color:white; margin: 0 auto;padding-bottom: 50px;}
+#logo{width: 57px; height: 55px; margin: 0 auto;padding-bottom: 40px;}
+#title{font-size:30px;text-align: center;}
+
+#regform {width: 332px; margin: 0 auto;margin-top: 50px;}
+#regform .reg_info{color:#666; margin-top: 10px;}
+#regform input{width: 312px;height:40px; border: solid 1px #d1d1d1;margin: 10px 0 0 0;padding-left: 10px; padding-right:10px;}
+#regform input[type="submit"] {width: 332px;background-color: orangered; color: white;margin-top:30px;}
+#regform .info{color:#888; font-size:12px;}
+#licence{text-align: center; font-size: 14px; margin: 50px auto;}
+
+footer{width: 100%; text-align: center;padding-top:100px; font-size:14px;}
+footer a {color: #333;text-decoration: none;margin-left: 10px;margin-right: 20px;}
+footer a:hover{color:black;}
+footer p{margin-top: 20px;}

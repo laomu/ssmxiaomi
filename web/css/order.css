@@ -1,0 +1,46 @@
+.ordercontainer{width:100%;background-color:#F5F5F5;padding:1px;}
+.orderbox {padding-top:50px; padding-bottom: 50px;width:1226px; margin: 50px auto; background-color:white; }
+.orderbox > h2, .addr-list, .send-type, .goods-item, .send-res, .order-res{width: 1050px; margin-left: 80px; clear:both}
+.orderbox > h2:nth-of-type(1), .orderbox > h2:nth-of-type(2){font-size: 18px;height: 35px;}
+.orderbox > h2:nth-of-type(2){margin-top:50px;}
+
+.addr-item{float: left;margin-right: 20px;width: 270px; height: 180px;border: solid 1px #E0E0E0;}
+.addr-item > h2{font-size: 18px; margin-left: 20px;height:30px;}
+.addr-item > .phone{font-size: 14px; margin-left: 20px;height:20px;margin-right: 20px;margin-top: 10px;}
+.addr-item > .addr{font-size: 14px; margin-left: 20px;height: 60px;margin-right: 20px;margin-top: 10px;}
+.addr-item > .edit{font-size:14px; color: red;float:right;margin-right: 20px;}
+.addr-item:last-of-type{background-color:white;}
+.addr-item:last-of-type a{text-decoration: none; display: block;width: 268px; height: 178px;padding-top:1px;}
+.addr-item:last-of-type a:hover{text-decoration: none; color:#888888;}
+.addr-item:last-of-type a em{margin: 0 auto;display: block;margin-top:50px;width:30px; height:30px; background-color: #b8b8b8; color: white;text-align: center;line-height: 28px;border-radius: 50%;}
+.addr-item:last-of-type em:hover{background-color:#888;}
+.addr-item:last-of-type a span{display: block; width:100px; text-decoration: none; color: #b8b8b8;margin: 10px 100px;}
+
+.goods-item, .send-type, .order-res{border-top: solid 1px #E0E0E0; border-bottom:solid 1px #E0E0E0; }
+.goods-item > .goods{height:80px;}
+.goods img{width: 40px; height: 40px; margin-top: 20px;float:left;}
+.goods span{display: inline-block; float:left;margin-left:20px;}
+.goods span:nth-of-type(1){width: 700px; height: 80px; line-height: 80px;}
+.goods span:nth-of-type(2){width:200px; height: 80px; line-height: 80px;}
+.goods span:nth-of-type(3){height: 80px; line-height: 80px;color:orangered;}
+
+.send-type, .send-res{border-top: none;height:60px;}
+.send-type h2, .send-res h2{height: 35px; font-size: 18px; float: left;}
+.send-type div, .send-res>div{float: left; height: 60px; line-height: 60px; color: red;margin-left: 50px;}
+.send-type div, .send-res>div>span{color:orangered;margin-right:40px;}
+.send-res>div>span{margin-left:38px;}
+
+.order-res{margin-top:40px; border-top: none;}
+.order-res > .orleft{float: left; width: 200px;}
+.order-res > .orleft > div > i{color: white;display:block; clear:both; float: left; margin-top: 10px;width: 20px; height: 20px; background-color: orangered; border-radius: 50%;}
+.order-res > .orleft > div > span{display:block;float:left; margin-top: 10px; margin-left: 10px;color: #757575;}
+
+.orright{width: 200px; float: right; list-style: none;}
+.orright li{text-align: right;color: #757575; margin-bottom: 10px;}
+.orright li span{display: inline-block;width:80px; color:orangered; }
+.orright li:last-of-type span strong{font-size: 32px; color: orangered; font-weight: 400;}
+
+.btns { float: right; margin-top: 20px; margin-right: 90px;}
+.btns button{width: 160px; height: 40px;}
+.btns button:nth-of-type(1){background-color:white; border: solid 1px #b8b8b8; color: #b8b8b8}
+.btns button:nth-of-type(2){background-color:orangered; border: none; color: white;}

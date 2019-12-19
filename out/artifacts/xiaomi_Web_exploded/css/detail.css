@@ -1,0 +1,42 @@
+#container{width:100%;border: solid 1px #ddd;background-color: white;}
+#goods-nav{width: 1240px; height:60px;background-color: white;margin: 0 auto;}
+
+#goods-nav div:nth-of-type(1) {width: 300px; height: 60px; line-height: 60px; float: left;}
+#goods-nav div:nth-of-type(1) a:nth-of-type(1){font-size:22px; color:#333;margin-right: 10px;}
+#goods-nav div:nth-of-type(1) a:nth-of-type(2){font-size:12px; color:#333;margin-left: 10px;}
+#goods-nav div:nth-of-type(2){float: right;height: 60px; line-height: 60px;}
+#goods-nav div:nth-of-type(2) a{color: #333;margin-left: 10px;margin-right: 10px;}
+#goods-nav div a:hover{color:red; text-decoration: none;}
+
+#detail{width: 1240px; margin: 0 auto;}
+#detail #dtleft{width:560px;height:560px;background-color:#888; float:left;}
+#dtleft > img{width: 560px; height: 560px;}
+
+#detail #dtright{float: right; width: 600px;}
+#detail #dtright h2{ font-size: 22px;}
+#detail .desc{color: #a8a8a8;}
+#detail .goodstype{color: red;margin: 20px 0;}
+.price {padding-bottom: 20px; border-bottom: solid 1px #d8d8d8;}
+.price span{color:red; font-size: 18px;}
+.price del{color: #a8a8a8;}
+
+#address{width:600px;padding-top: 30px;
+    padding-bottom: 30px;border:solid 1px #eee;background-color:#efefef;}
+#address span{margin-left:20px;display: inline-block;}
+#address span:last-of-type a{color: red;}
+#address p{color:red;margin-left:20px;margin-top:10px;}
+
+#detail #dtright .vinfo h2{font-size: 18px; font-weight: 400;}
+.vinfo div{float: left;width: 290px; margin-top: 10px;margin-right:20px; height: 40px;border: solid 1px #b8b8b8;text-align: center; line-height: 40px;}
+.vinfo div:first-of-type{border:solid 1px orangered;}
+.vinfo div:nth-child(odd){margin-right: 0;}
+.vinfo div:first-of-type span:nth-of-type(1){color:red;}
+
+.order{width: 600px; background-color: #efefef;padding-top:40px;padding-bottom:40px;margin-top:20px;margin-bottom: 20px;}
+.order span:nth-of-type(1){color:#666; float:left; margin-left: 20px;}
+.order span:nth-of-type(2){color:#666; float:right;margin-right:20px;}
+.order div:nth-of-type(1){clear:both;}
+.order div:nth-of-type(2){font-size:22px; color: red;float:left;margin-left:20px;margin-top:20px;}
+
+.btns input{width: 300px;height:50px; background-color: orangered;border:none; color: white;font-size:16px;}
+.btns button{width: 120px; height: 50px; border: none; background-color: #b8b8b8;color: white; font-size: 16px;margin-bottom: 20px;}

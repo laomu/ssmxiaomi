@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 1.自动扫描配置 -->
+    <context:component-scan base-package="com.damu">
+        <!-- Spring不扫描控制器 -->
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- 2. 引入数据源配置 -->
+    <context:property-placeholder location="classpath*:db.properties" />
+
+    <!-- 数据源配置：c3p0 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <!-- 数据库驱动 -->
+        <property name="driverClass" value="${jdbc.driver}" />
+        <!-- 数据库连接串 -->
+        <property name="jdbcUrl" value="${jdbc.jdbcUrl}" />
+        <!-- 数据库用户 -->
+        <property name="user" value="${jdbc.user}" />
+        <!-- 数据库密码 -->
+        <property name="password" value="${jdbc.password}" />
+        <!-- 最小连接数 -->
+        <property name="minPoolSize" value="${jdbc.minPoolSize}" />
+        <!-- 最大连接数 -->
+        <property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+        <!-- 最大空闲的时间，单位是秒，无用的链接再过时后会被回收 -->
+        <property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+        <!-- 数据库连接池初始化时获取的连接数  -->
+        <property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+        <!-- 在当前连接数耗尽的时候，一次获取的新的连接数 -->
+        <property name="acquireIncrement" value="${jdbc.acquireIncrement}" />
+        <!-- 每隔1800S检查数据库空闲连接 -->
+        <property name="idleConnectionTestPeriod"
+                  value="${jdbc.idleConnectionTestPeriod}" />
+        <!-- 当数据库连接失败以后尝试 重新连接的次数 -->
+        <property name="acquireRetryAttempts" value="${jdbc.acquireRetryAttempts}" />
+    </bean>
+
+    <!-- 3. 配置mybatis整合-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- mybatis全局配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml">
+        </property>
+        <!-- 配置数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+        <!-- 配置扫描mapper -->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
+
+    <!-- 配置扫描器:将mybatis接口实现加入到ioc容器中 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 扫描所有的dao接口的实现，加入到ioc容器中 -->
+        <property name="basePackage" value="com.damu.xiaomi.dao"/>
+    </bean>
+
+    <!-- 4. 事务控制 -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 数据源 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- 开启注解支持的事务控制，比较重要的使用配置实现 -->
+    <aop:config>
+        <!-- 配置切入点 -->
+        <aop:pointcut expression="execution(* com.damu.xiaomi.service..*(..))" id="txPoint"/>
+        <!-- 配置事务增强 -->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>
+    </aop:config>
+    <!-- 配置事务增强 -->
+    <tx:advice id="txAdvice">
+        <tx:attributes>
+            <!-- 所有方法都是事务方法-->
+            <tx:method name="*" />
+            <!-- 所有get开头的方法，配置优化 -->
+            <tx:method name="get*" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+
+
+</beans>

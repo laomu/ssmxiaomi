@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- 1. 扫描所有容器组件 -->
+    <context:component-scan base-package="com.damu" use-default-filters="false">
+        <!-- 只扫描controller-->
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- 2. 配置视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <!-- 3. 两个标准配置：将springMVC不能处理的请求交给默认处理器处理[tomcat]-->
+    <mvc:default-servlet-handler />
+
+    <!-- 添加注解支持、映射动态请求、JSR303校验、快捷AJAX等 -->
+    <mvc:annotation-driven/>
+
+</beans>
